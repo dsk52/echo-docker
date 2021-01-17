@@ -10,7 +10,7 @@ func main() {
 	e := echo.New()
 
 	e.GET("/", func(c echo.Context) error {
-		return c.String(http.StatusOK, "hello! echo")
+		return c.String(http.StatusOK, "hello! hoge")
 	})
 
 	e.Logger.Fatal(e.Start(":8080"))

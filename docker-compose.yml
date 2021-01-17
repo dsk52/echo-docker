@@ -16,6 +16,9 @@ services:
     tty: true
     volumes:
       - ./:/go/src
-    command: go run server.go
+    command: air
+    # command: >
+    #   ash -v "go mod download && \
+    #   air -c .air.toml"
     ports:
       - 8080:8080
