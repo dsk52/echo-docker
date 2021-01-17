@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  # nginx:
+  #   container_name: "docker-subri-go_nginx"
+  #   image: nginx:1.19.6-alpine
+  #   ports:
+  #     - 8080:8080
+  #   depends_on:
+  #     - app
+  app:
+    build:
+      context: .
+      dockerfile: docker/go/Dockerfile
+    container_name: "docker-subri-go_app"
+    tty: true
+    volumes:
+      - ./:/go/src
+    command: go run server.go
+    ports:
+      - 8080:8080
